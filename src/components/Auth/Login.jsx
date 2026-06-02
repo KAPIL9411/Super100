@@ -129,7 +129,7 @@ export default function Login({ theme, onSuccess }) {
     }}>
       <div style={{ width: '100%', maxWidth: '420px', padding: '40px 32px', background: cardBg, border: `2px solid ${cardBorder}`, borderRadius: '12px', boxShadow: theme === 'premium' ? '0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(139,92,246,0.2)' : '0 4px 20px rgba(0,0,0,0.1)' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <img src="/ssc_logo.jpg" alt="SSC Logo" style={{ width: '72px', height: '72px', borderRadius: '50%', marginBottom: '16px', border: `3px solid ${theme === 'premium' ? '#8b5cf6' : '#337ab7'}` }} />
+          <img src="/icon-512.png" alt="SSC Logo" style={{ width: '72px', height: '72px', borderRadius: '50%', marginBottom: '16px', border: `3px solid ${theme === 'premium' ? '#8b5cf6' : '#337ab7'}` }} />
           <h1 style={{ fontSize: '26px', fontWeight: 'bold', marginBottom: '4px', color: textColor }}>Super Mocks</h1>
           <p style={{ fontSize: '13px', color: mutedColor }}>SSC CGL Exam Simulator</p>
         </div>
