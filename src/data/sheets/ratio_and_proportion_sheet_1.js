@@ -199,7 +199,7 @@ export const ratio_and_proportion_sheet_1 = {
       questionHindi: "यदि (a+b):(b+c):(c+a) = 6:7:8 तथा a+b+c = 14 हो, तो c का मान ज्ञात कीजिए।",
       options: ["8","10","6","12"],
       optionsHindi: ["8","10","6","12"],
-      correctOption: 3,
+      correctOption: 2,
       explanation: "",
       explanationHindi: ""
     },
