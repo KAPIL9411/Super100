@@ -2082,10 +2082,10 @@ function App() {
                 <span>OFFICIAL SSC CGL PREP PORTAL</span>
               </div>
               <h1 className="hero-heading">
-                Master Quantitative Aptitude with <span className="text-gradient-purple">Super Mocks</span>
+                Master Quantitative Aptitude with <span className="text-gradient-purple">Super 100 Mocks</span>
               </h1>
               <p className="hero-desc">
-                High-yield bilingual mock test simulators with detailed score analysis. Experience official CBT exam standard environments with real-time analytics.
+                High-yield bilingual mock tests with detailed score analysis. Experience official CBT exam standard environments with real-time analytics.
               </p>
               
               <div className="hero-actions">
@@ -2175,7 +2175,7 @@ function App() {
                 </div>
                 <div className="trust-item">
                   <CheckCircle size={14} className="icon-gold" />
-                  <span>SSC CGL CBT Simulator</span>
+                  <span>SSC CGL CBT TEST</span>
                 </div>
                 <div className="trust-item">
                   <CheckCircle size={14} className="icon-gold" />
@@ -2193,7 +2193,7 @@ function App() {
               <div className="floating-badge badge-top-right">
                 <TrendingUp size={14} className="badge-icon-gold" />
                 <div>
-                  <span className="f-title">CGL Tier-I</span>
+                  <span className="f-title">CGL Pre & Mains</span>
                   <span className="f-desc">Top Ranks</span>
                 </div>
               </div>
@@ -2349,7 +2349,7 @@ function App() {
           })()}
 
           {/* Chapter Folders list */}
-          <div className="chapter-section-header">⚡ Practice Modules / अभ्यास मॉड्यूल</div>
+          <div className="chapter-section-header">⚡ Practice Modules</div>
           
           {!sheetsLoaded ? (
             <div className="loading-sheets-placeholder" style={{ textAlign: 'center', padding: '40px', opacity: 0.6 }}>
