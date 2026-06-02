@@ -1,0 +1,731 @@
+export const geometry_sheet_4 = {
+  id: "geometry_sheet_4",
+  title: "Geometry - Super 100 Sheet 4",
+  topic: "Quantitative Aptitude",
+  questions: [
+    {
+      id: 54,
+      question: "In ∆ABC, AD is the internal bisector of ∠A which meets BC at D. If BD = 3.6 cm and BC = 8 cm, then find the ratio of AB and AC.",
+      questionHindi: "∆ABC में, AD, ∠A का आंतरिक समद्विभाजक है जो BC से बिंदु D पर मिलता है। यदि BD = 3.6 cm और BC = 8 cm हैं, तो AB और AC का अनुपात ज्ञात करें।",
+      options: ["11:9","9:11","7:13","13:7"],
+      optionsHindi: ["11:9","9:11","7:13","13:7"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 55,
+      question: "In ∆ABC, ∠A = 135°, CA = 5√2 cm and AB = 7 cm. E and F are the mid points of sides AC and AB respectively. Find the length (in cm) of EF.",
+      questionHindi: "∆ABC में, ∠A = 135°, CA = 5√2 cm और AB = 7 cm है। E और F, क्रमशः भुजा AC और AB के मध्य बिंदु है। EF की लंबाई (cm में) ज्ञात कीजिए।",
+      options: ["5.5","5","6","6.5"],
+      optionsHindi: ["5.5","5","6","6.5"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 56,
+      question: "In ∆PQR, ∠PQR = 135°, PQ = 8√2 cm and PR = 17 cm. Find the length (in cm) of QR.",
+      questionHindi: "∆PQR में, ∠PQR = 135° है, PQ = 8√2 cm और PR = 17 cm है। QR की लंबाई (cm में) ज्ञात करें।",
+      options: ["7","9","8","10"],
+      optionsHindi: ["7","9","8","10"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 57,
+      question: "In ∆ABC, AD is the bisector of angle A, which meets BC at D. If AB = 15 cm, BC = 10 cm and length of BD is 2 cm less than that of DC, then find the length of AC.",
+      questionHindi: "ABC में, AD कोण A का दिभाजक है, जो BC से बिंदु D पर मिलता है। यदि AB = 15 cm, BC = 10 cm है और BD की लंबाई, DC की लंबाई से 2 cm कम है, तो AC की लंबाई ज्ञात करें।",
+      options: ["16 cm","22.5 cm","18.5 cm","18 cm"],
+      optionsHindi: ["16 cm","22.5 cm","18.5 cm","18 cm"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 58,
+      question: "In ∆ABC, ∠B = 90°, AB = 8 cm and BC = 15 cm. A point D on BC is such that AD bisects ∠A. Find the length (in cm) of BD.",
+      questionHindi: "∆ABC में, ∠B = 90°, AB = 8 cm और BC = 15 cm है। BC पर बिंदु D इस प्रकार है कि AD, ∠A को समदिभाजित करता है। BD की लंबाई (cm में) ज्ञात करें।",
+      options: ["3.6","4.8","4.5","4.2"],
+      optionsHindi: ["3.6","4.8","4.5","4.2"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 59,
+      question: "In a triangle ABC, AB: AC = 5:2, BC = 9 cm. BA is produced to D, and the bisector of the angle CAD meets BC produced at E. What is the length (in cm) of CE?",
+      questionHindi: "एक त्रिभुज ABC में, AB: AC = 5:2, BC = 9 सेमी. BA को D तक बढ़ाया जाता है, और CAD कोण का समद्विभाजक BC से मिलता है जो E पर उत्पन्न होता है। CE की लंबाई (सेमी में) क्या है?",
+      options: ["9","10","3","6"],
+      optionsHindi: ["9","10","3","6"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 60,
+      question: "In ∆ABC, AD is the bisector of angle A meeting BC at D. If AC = 21 cm, BC = 11 cm and the length of BD is 3 cm less than DC, then the length (in cm) of side AB is:",
+      questionHindi: "ABC में, AD कोण A का समद्विभाजक है जो BC को D पर मिलता है। यदि AC = 21 सेमी, BC = 11 सेमी और BD की लंबाई DC से 3 सेमी कम है, तो भुजा AB की लंबाई (सेमी में) है:",
+      options: ["10","15","18","12"],
+      optionsHindi: ["10","15","18","12"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 61,
+      question: "If ABC is a triangle and AD is the angle bisector of angle A, It is given that the value of AB = 16 cm, AC = 12 cm and BC = 21 cm. Find the value of AD?",
+      questionHindi: "यदि त्रिभुज ABC में AD कोण समद्विभाजक हैं तो उसकी लंबाई ज्ञात करें, यदि AB = 16 cm, AC = 12 cm and BC = 21 cm",
+      options: ["2√21","√21","3√21","4√21"],
+      optionsHindi: ["2√21","√21","3√21","4√21"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 62,
+      question: "In a triangle PQR, PX, QY and RZ be altitudes intersecting at O. If PO = 6cm, PX = 8cm and QO = 4cm, find QY.",
+      questionHindi: "एक त्रिभुज PQR में, PX, QY और RZ, O पर प्रतिच्छेद करने वाले शीर्षलंब हों। यदि PO = 6cm, PX = 8cm और QO = 4cm, तो QY ज्ञात करें।",
+      options: ["6.3cm","5.8cm","6cm","7cm"],
+      optionsHindi: ["6.3cm","5.8cm","6cm","7cm"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 63,
+      question: "In an isosceles triangle, the length of each equal side is twice the length of the third side. The ratio of areas of the isosceles triangle and an equilateral triangle with same perimeter is?",
+      questionHindi: "एक समद्विबाहु त्रिभुज में प्रत्येक बराबर वाली भुजा तीसरी भुजा से दुगुनी है समद्विबाहु त्रिभुज और समबाहु त्रिभुज, जिनका परिमाप एक समान हो, कि क्षेत्रफलों का अनुपात बताइए?",
+      options: ["30√5: 100","32√5: 100","36√5: 100","42√5: 100"],
+      optionsHindi: ["30√5: 100","32√5: 100","36√5: 100","42√5: 100"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 64,
+      question: "FIND CD?",
+      questionHindi: "CD का मान ज्ञात करें?",
+      options: ["13/6","17/6","19/6","18/5"],
+      optionsHindi: ["13/6","17/6","19/6","18/5"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212279/1_rbf82j.jpg"
+    },
+    {
+      id: 65,
+      question: "FIND X?",
+      questionHindi: "X का मान ज्ञात करें?",
+      options: ["5","6","7","8"],
+      optionsHindi: ["5","6","7","8"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212278/2_cipkqp.jpg"
+    },
+    {
+      id: 66,
+      question: "In ∆ABC, AB = AC = 12 cm. There is a point D on BC such that BD = 4cm and DC = 9cm. Then find the value of AD ?",
+      questionHindi: "ABC में, AB = AC = 12 सेमी. BC पर एक बिंदु D इस प्रकार है कि BD = 4cm और DC = 9cm है। तो AD का मान ज्ञात कीजिए?",
+      options: ["6√2","6√3","6√5","6√6"],
+      optionsHindi: ["6√2","6√3","6√5","6√6"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 67,
+      question: "In the given figure, ABC is a right angled triangle. ∠ABC = 90° and ∠BCA = 60°. If the radius of the larger circle is 27 cm, then what is the radius (in cm) of the smallest circle?",
+      questionHindi: "दी गई आकृति में, ABC एक समकोण त्रिभुज है। ∠ABC = 90° और ∠BCA = 60° है। यदि बड़े वृत्त की त्रिज्या 27 सेमी है, तो सबसे छोटे वृत्त की त्रिज्या (सेमी में) क्या है?",
+      options: ["6","3","12","9"],
+      optionsHindi: ["6","3","12","9"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212279/3_ztiy1l.jpg"
+    },
+    {
+      id: 68,
+      question: "In the given figure ABC is an equilateral triangle. Two circles of radius 4 cm and 12 cm are inscribed in the triangle. What is the side (in cm) of an equilateral triangle?",
+      questionHindi: "दी गई आकृति में, ABC एक समबाहु त्रिभुज है। 4 सेमी. तथा 12 सेमी. त्रिज्या वाले दो वृत्त त्रिभुज में अंकित हैं। समबाहु त्रिभुज की भुजा (सेमी. में) क्या है?",
+      options: ["12√2","2√3","60","2√6"],
+      optionsHindi: ["12√2","2√3","60","2√6"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212279/4_hoe9n0.jpg"
+    },
+    {
+      id: 69,
+      question: "If 'p' is a any point inside equilateral triangle & three altitudes of length 2, 3 and 4 cm are drawn from that point. Find the area, inradius and circumradius?",
+      questionHindi: "यदि समबाहु त्रिभुज के भीतर 'p' कोई बिंदु है और उस बिंदु से 2, 3 और 4 सेमी लंबाई के तीन शीर्षलंब खींचे गए हैं। क्षेत्रफल, अंतत्रिज्या और परित्रिज्या ज्ञात कीजिए?",
+      options: ["","","",""],
+      optionsHindi: ["","","",""],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 70,
+      question: "G is the centroid of the equilateral ∆ABC. If AB = 10 cm then length of AG is ?",
+      questionHindi: "G समभुज ∆ABC का केन्द्रक है। यदि AB = 10 सेमी. तो AG की लम्बाई कितनी होगी?",
+      options: ["(5√3)/2 cm","(10√3)/3 cm","5√3 cm","10√3 cm"],
+      optionsHindi: ["(5√3)/2 cm","(10√3)/3 cm","5√3 cm","10√3 cm"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 71,
+      question: "Inside a square ABCD, ABEC is an equilateral triangle. If CE and BD intersect at O, then ∠BOC is equal to",
+      questionHindi: "एक वर्ग ABCD के अंतर्गत, ABEC एक समबाहु त्रिभुज है। उसमें यदि CE तथा BD परस्पर O पर काटते हो. तो ∠BOC किसके बराबर होगा?",
+      options: ["60°","75°","90°","120°"],
+      optionsHindi: ["60°","75°","90°","120°"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 72,
+      question: "If ABC is an equilateral triangle and D is a point on BC such that AD ⊥ BC, then which of the following is correct?",
+      questionHindi: "ABC एक समबाहु त्रिभुज है और D एक ऐसा बिंदु BC पर है, जिसमें AD ⊥ BC है, तो निम्न में क्या सही है?",
+      options: ["AB: BD = 1:1","AB: BD = 1:2","AB: BD = 2:1","AB: BD = 3:2"],
+      optionsHindi: ["AB: BD = 1:1","AB: BD = 1:2","AB: BD = 2:1","AB: BD = 3:2"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 73,
+      question: "The area of an equilateral triangle is 9√3 m². The length (in m) of the median is?",
+      questionHindi: "एक समबाहु त्रिभुज का क्षेत्रफल 9√3 m² है। तदनुसार, उसकी माध्यिका की लंबाई कितने मीटर होगी?",
+      options: ["2√3","3√3","3√2","2√2"],
+      optionsHindi: ["2√3","3√3","3√2","2√2"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 74,
+      question: "If the incentre of an equilateral triangle lies inside the triangle and its radius is 3 cm, then the side of the equilateral triangle is?",
+      questionHindi: "यदि किसी समबाहु त्रिभुज का अंतः केंद्र उस त्रिभुज के अंदर हो, और त्रिज्या 3 सेमी हो तो समबाहु त्रिभुज की भुजा कितनी लंबी होगी?",
+      options: ["9√3 cm","6√3 cm","3√3 cm","6 cm"],
+      optionsHindi: ["9√3 cm","6√3 cm","3√3 cm","6 cm"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 75,
+      question: "Triangle ABC is an equilateral triangle. DC = 4cm, ∠BAD = 15° then find the value of AD?",
+      questionHindi: "ABC एक समबाहु त्रिभुज है | DC = 4cm, ∠BAD = 15° है तो AD का मान बताए?",
+      options: ["6√2","6√3","6√5","6√6"],
+      optionsHindi: ["6√2","6√3","6√5","6√6"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212279/5_japcyf.jpg"
+    },
+    {
+      id: 76,
+      question: "If I is the incentre of ∆ABC and ∠BIC = 135°, then ∠ABC is",
+      questionHindi: "यदि I, ∆ABC का अंतः केंद्र है और ∠BIC = 135°, तो ∠ABC है।",
+      options: ["Acute angled","Equilateral","Right angled","Obtuse angled"],
+      optionsHindi: ["Acute angled","Equilateral","Right angled","Obtuse angled"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 77,
+      question: "Triangle ABC is an equilateral triangle. BD = 3cm and DC = 9cm, then find the value of AD?",
+      questionHindi: "ABC एक समबाहु त्रिभुज है | BD = 3cm और DC = 9cm है तो AD का मान बताए?",
+      options: ["6√2","√117","6√5","√116"],
+      optionsHindi: ["6√2","√117","6√5","√116"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212280/6_fonnzq.jpg"
+    },
+    {
+      id: 78,
+      question: "Triangle ABC is an equilateral triangle. DC = 2cm and AD = 2√7 cm then find the value of AC?",
+      questionHindi: "ABC एक समबाहु त्रिभुज है | DC = 2cm और AD = 2√7 cm है तो AC का मान बताए?",
+      options: ["6","8","5","7"],
+      optionsHindi: ["6","8","5","7"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212446/7_qj8qps.jpg"
+    },
+    {
+      id: 79,
+      question: "Triangle ABC is an equilateral triangle. BC = 10cm, DB = 5cm and EC = 2cm, then find the value of DE?",
+      questionHindi: "ABC एक समबाहु त्रिभुज है । BC = 10cm, DB = 5cm and EC = 2cm है तो DE का मान बताए?",
+      options: ["6","5","8","7"],
+      optionsHindi: ["6","5","8","7"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212448/8_mkbtza.jpg"
+    },
+    {
+      id: 80,
+      question: "ABC is an equilateral triangle. The side BC is trisected at D such that BC = 3BD. What is the ratio of AD² to AB²?",
+      questionHindi: "ABC एक समबाहु त्रिभुज है। भुजा BC को D पर त्रिविभाजित किया जाता है जैसे BC = 3BD, AD² व AB² का अनुपात क्या है?",
+      options: ["7:9","7:3","5:7","9:7"],
+      optionsHindi: ["7:9","7:3","5:7","9:7"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 81,
+      question: "Find x?",
+      questionHindi: "x का मान ज्ञात करें?",
+      options: ["3√2","3√3","3√5","3√6"],
+      optionsHindi: ["3√2","3√3","3√5","3√6"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212447/9_lem0im.jpg"
+    },
+    {
+      id: 82,
+      question: "ABC is an isosceles right angle triangles having ∠B = 90°. If D is any point on AC. If AD = 14cm, DC = 2cm. Find the value of x?",
+      questionHindi: "ABC एक समद्विबाहु समकोण त्रिभुज है जिसमें ∠B = 90° है। यदि AC पर एक बिन्दु D है | AD = 14cm और DC = 2cm है तो x का मान बताए?",
+      options: ["7","8","9","10"],
+      optionsHindi: ["7","8","9","10"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 83,
+      question: "ABC is an isosceles right angle triangles having angle C = 90°. If D is any point on AB, then AD² + BD² is equal to",
+      questionHindi: "ABC एक समद्विबाहु समकोण त्रिभुज है जिसमें C = 90° है। यदि AB पर एक बिन्दु D है, तो AD² + BD² किसके बराबर है?",
+      options: ["CD²","2CD²","3CD²","4CD²"],
+      optionsHindi: ["CD²","2CD²","3CD²","4CD²"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 84,
+      question: "Triangle ABC is an isosceles BD = x cm and DC = 16cm then find the value of x?",
+      questionHindi: "ABC एक समद्विबाहु त्रिभुज है | BD = x cm और DC = 16cm है तो x का मान बताए?",
+      options: ["11","4","14","13"],
+      optionsHindi: ["11","4","14","13"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212448/10_ritd43.jpg"
+    },
+    {
+      id: 85,
+      question: "How many triangles with integral sides are possible for perimeter = 18?",
+      questionHindi: "परिमाप = 18 के लिए समाकल भुजाओं वाले कितने त्रिभुज संभव हैं?",
+      options: ["6","7","8","9"],
+      optionsHindi: ["6","7","8","9"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 86,
+      question: "How many triangles with integral sides are possible for perimeter = 19?",
+      questionHindi: "परिमाप = 19 के लिए समाकल भुजाओं वाले कितने त्रिभुज संभव हैं?",
+      options: ["6","7","10","9"],
+      optionsHindi: ["6","7","10","9"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 87,
+      question: "How many right angled triangles with integral sides are possible with perpendicular side as 40?",
+      questionHindi: "समाकल भुजाओं वाले ऐसे कितने समकोण त्रिभुज संभव हैं, जिनकी लंब भुजा 40 हो?",
+      options: ["6","7","8","9"],
+      optionsHindi: ["6","7","8","9"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 88,
+      question: "How many right angled triangles with integral sides are possible with perpendicular side as 15?",
+      questionHindi: "समाकल भुजाओं वाले ऐसे कितने समकोण त्रिभुज संभव हैं, जिनकी लंब भुजा 15 हो?",
+      options: ["4","7","8","9"],
+      optionsHindi: ["4","7","8","9"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 89,
+      question: "How many isosceles triangles with integer sides are possible if the perimeter of the triangle is 15 units?",
+      questionHindi: "यदि त्रिभुज का परिमाप 15 इकाई है, तो पूर्णांक भुजाओं वाले कितने समद्विबाहु त्रिभुज संभव हैं?",
+      options: ["4","8","9","7"],
+      optionsHindi: ["4","8","9","7"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 90,
+      question: "How many isosceles triangles with integer sides are possible if the perimeter of the triangle is 35 units?",
+      questionHindi: "यदि त्रिभुज का परिमाप 35 इकाई है, तो पूर्णांक भुजाओं वाले कितने समद्विबाहु त्रिभुज संभव हैं?",
+      options: ["10","8","9","7"],
+      optionsHindi: ["10","8","9","7"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 91,
+      question: "In the given figure, PQ//BC, AP: AB = 2:7. If QC = 10cm and BC = 21cm find a) AQ b) PQ",
+      questionHindi: "दी गई आकृति में, PQ//BC, AP: AB = 2:7. यदि QC = 10cm और BC = 21cm है तो ज्ञात कीजिए a) AQ b) PQ",
+      options: ["4,6","7,6","3,8","5,8"],
+      optionsHindi: ["4,6","7,6","3,8","5,8"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212449/11_bcelhc.jpg"
+    },
+    {
+      id: 92,
+      question: "In a right triangle angled at B of perimeter 60, a perpendicular is drawn on side AC from B, the inradius of triangles ABD and BDC are 4 & 3 respectively. Find Area of the ∆ABC?",
+      questionHindi: "60 परिमाप वाले B पर कोण वाले एक समकोण त्रिभुज की भुजा पर एक लंब खींचा जाता है B से AC, त्रिभुज ABD और BDC की अंत: त्रिज्या क्रमशः 4 और 3 है। ∆ABC का क्षेत्रफल ज्ञात कीजिए?",
+      options: ["120","144","135","150"],
+      optionsHindi: ["120","144","135","150"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 93,
+      question: "In the below given figure, PQR is a right angled triangle. QS is the altitude on hypotenuse PR. Circles are inscribed within the triangle PSQ and QSR. A and B are the centres of circle. What is the distance between A and B?",
+      questionHindi: "नीचे दी गई आकृति में, PQR एक समकोण त्रिभुज है। QS कर्ण PR पर ऊंचाई है। त्रिभुज PSQ और QSR के भीतर वृत्त अंकित हैं। A और B वृत्त के केंद्र हैं। A और B के बीच की दूरी क्या है?",
+      options: ["7","√50","√100","√200"],
+      optionsHindi: ["7","√50","√100","√200"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 94,
+      question: "In the given figure, ABC is a right-angle triangle. Angle ABC = 90° and angle ACB = 60° If the radius of the smaller circle is 2cm, what is the radius (in cm) of the larger circle?",
+      questionHindi: "दी गई आकृति में, ABC एक समकोण त्रिभुज है। कोण ABC = 90° और कोण ACB = 60° है। यदि छोटे वृत्त की त्रिज्या 2 सेमी है, तो बड़े वृत्त की त्रिज्या (सेमी में) क्या है?",
+      options: ["4","6","4.5","7.5"],
+      optionsHindi: ["4","6","4.5","7.5"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212450/12_v0nguj.jpg"
+    },
+    {
+      id: 95,
+      question: "In the given figure, O is the centre of the circle, circle has 3 tangents. If ∠QPR = 45° then what is the value of ∠QOR?",
+      questionHindi: "दी गई आक्रति मे, O व्रत का केंद्र है। व्रत पर 3 स्पर्श रेखाए है। यदि ∠QPR = 45°, है तो ∠QOR का मान ज्ञात करे ?",
+      options: ["67.9","67.5","62.5","61.5"],
+      optionsHindi: ["67.9","67.5","62.5","61.5"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212450/13_ruvgfu.png"
+    },
+    {
+      id: 96,
+      question: "ABC is a triangle of side 13, 14 and 15. I is the incentre of triangle ABC. If BC = 14, find the length of side MN.",
+      questionHindi: "ABC एक त्रिभुज है जिसकी भुजाएँ 13, 14 और 15 हैं। 'I' त्रिभुज ABC का अंतः केंद्र है। यदि BC = 14 है, तो भुजा MN की लंबाई ज्ञात कीजिए।",
+      options: ["21","54","23","28/3"],
+      optionsHindi: ["21","54","23","28/3"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212451/14_ydnfr1.png"
+    },
+    {
+      id: 97,
+      question: "O is the circumcentre of a triangle PQR with angle P = 56°. If the bisector of angle OQR and angle ORQ intersects at M, what is the measure of angle QMR?",
+      questionHindi: "O एक त्रिभुज PQR का परिकेन्द्र है जिसका कोण P = 56° है। यदि कोण OQR और कोण ORQ का सम‌द्विभाजक M पर काटता है, तो कोण QMR का माप क्या है?",
+      options: ["118°","129°","146°","151°"],
+      optionsHindi: ["118°","129°","146°","151°"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 98,
+      question: "In the given figure, OX, OY and OZ are perpendicular bisectors of the three sides of triangle. If ∠QPR = 65° and ∠PQR = 60° what is the value of (∠QOR + ∠POR)?",
+      questionHindi: "दी गई आकृति में, OX, OY और OZ त्रिभुज की तीनों भुजाओं के लम्ब सम‌द्विभाजक हैं। यदि ∠QPR = 65° और ∠PQR = 60° तो (∠QOR + ∠POR) का मान क्या होगा?",
+      options: ["250°","230°","210°","195°"],
+      optionsHindi: ["250°","230°","210°","195°"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212452/16_gx1zsw.jpg"
+    },
+    {
+      id: 99,
+      question: "ABC is a right-angle triangle. If ∠ACB = 90°, ∠ABC = 30°, what is the ratio of the circumradius of the triangle to the side BC?",
+      questionHindi: "ABC एक समकोण त्रिभुज है। यदि ∠ACB = 90°, ∠ABC = 30° है तो, त्रिभुज की परिधि का भुजा BC से अनुपात क्या है?",
+      options: ["2:√3","1:√3","1:2","2:3"],
+      optionsHindi: ["2:√3","1:√3","1:2","2:3"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 100,
+      question: "Find the distance between incentre and circumcentre of a triangle with sides 6cm, 8cm and 10cm.",
+      questionHindi: "6 सेमी, 8 सेमी और 10 सेमी भुजाओं वाले त्रिभुज के अंतःकेंद्र और परिकेन्द्र के बीच की दूरी ज्ञात कीजिए।",
+      options: ["√5","√6","2√2","√7"],
+      optionsHindi: ["√5","√6","2√2","√7"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 101,
+      question: "Find the distance between orthocentre and incentre of right-angle triangle with perimeter 126cm and circumradius 26.5cm.",
+      questionHindi: "126cm परिमाप और 26.5cm परित्रिज्या वाले समकोण त्रिभुज के लंबकेन्द्र और अंतः केंद्र के बीच की दूरी ज्ञात कीजिए।",
+      options: ["10√2","√10","10√5","2√6\n\nQ.101(B) In triangle ABC, H is the orthocentre and O is the circumcentre. If ∠BAH = 30°, find ∠OAC."],
+      optionsHindi: ["10√2","√10","10√5","त्रिभुज ABC में, H लंबकेन्द्र है और O परिकेंद्र है। यदि ∠BAH = 30°, ∠OAC तो ज्ञात कीजिए। (a) 15° (b) 45° (c) 30° (d) 60°"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 102,
+      question: "In a triangle PQR, PX, QY and RZ be altitudes intersecting at O. If PO = 6cm, PX = 8cm and QO = 4cm, find QY.",
+      questionHindi: "एक त्रिभुज PQR में, PX, QY और RZ, O पर प्रतिच्छेद करने वाले शीर्षलंब हों। यदि PO = 6cm, PX = 8cm और QO = 4cm, तो QY ज्ञात करें।",
+      options: ["6.3cm","5.8cm","6cm","7cm"],
+      optionsHindi: ["6.3cm","5.8cm","6cm","7cm"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 103,
+      question: "In a triangle, the length of two altitudes are 12cm and 15cm respectively. Find the sum of all possible integer value of the third altitude.",
+      questionHindi: "एक त्रिभुज में, दो शीर्षलंबों की लंबाई क्रमशः 12 सेमी और 15 सेमी है। तीसरे शीर्षलंब के सभी संभावित पूर्णांक मान का योग ज्ञात कीजिए।",
+      options: ["1689","1749","1889","1598"],
+      optionsHindi: ["1689","1749","1889","1598"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 104,
+      question: "What is the distance between the orthocentre and the circumcentre of a triangle with sides 12cm, 35cm and 37cm?",
+      questionHindi: "12cm, 35cm और 37cm भुजाओं वाले त्रिभुज के लंबकेन्द्र और परिकेंद्र के बीच की दूरी क्या है?",
+      options: ["17.5cm","15cm","18.5cm","8√5cm"],
+      optionsHindi: ["17.5cm","15cm","18.5cm","8√5cm"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 105,
+      question: "A circle is inscribed in the triangle ABC with sides given as AB = 10, BC = 8 and CA = 12 units. The value of AD x BF is:",
+      questionHindi: "त्रिभुज ABC में, जिसकी भुजाएँ AB = 10, BC = 8 और CA = 12 इकाई हैं, एक वृत्त उत्कीर्ण है। AD x BF का मान है:",
+      options: ["20","21","22","23"],
+      optionsHindi: ["20","21","22","23"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 106,
+      question: "In a triangle ABC, BD and CE are two medians which intersect each other at right angle. If AB = 22, AC = 19, find BC.",
+      questionHindi: "एक त्रिभुज ABC में, BD और CE दो माध्यिकाएँ हैं जो एक दूसरे को समकोण पर काटती हैं। यदि AB = 22, AC = 19 है, तो BC ज्ञात कीजिए।",
+      options: ["13","14","15","12"],
+      optionsHindi: ["13","14","15","12"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 107,
+      question: "G is the centroid of triangle ABC, where AB, BC and CA are 16, 63 and 65cm respectively. Find BG.",
+      questionHindi: "G त्रिभुज ABC का केन्द्रक है, जहाँ AB, BC और CA क्रमशः 16, 63 और 65 सेमी हैं। BG खोजें।",
+      options: ["65/3","21","52/3","65/6"],
+      optionsHindi: ["65/3","21","52/3","65/6"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 108,
+      question: "In triangle ABC, DE || BC & EF || CD, AF = 4 cm, FD = 6 cm, find DB = ?",
+      questionHindi: "त्रिभुज ABC में, DE || BC और EF || CD, AF = 4 सेमी, FD = 6 सेमी है, तो DB = ?",
+      options: ["20/3 cm","15 cm","6 cm","None of these"],
+      optionsHindi: ["20/3 cm","15 cm","6 cm","None of these"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212454/22_gwtvvx.png"
+    },
+    {
+      id: 109,
+      question: "In the given figure, ABC is an equilateral triangle with each side of length 30cm. XY is parallel to BC, XP is parallel to AC and YQ is parallel to AB. If XY + XP + YQ = 40 cm, find PQ.",
+      questionHindi: "दी गई आकृति में, ABC एक समबाहु त्रिभुज है जिसकी प्रत्येक भुजा की लंबाई 30cm है। XY, BC के समानांतर है, XP, AC के समानांतर है और YQ, AB के समानांतर है। यदि XY + XP + YQ = 40 cm, तो PQ ज्ञात कीजिए।",
+      options: ["5 cm","12 cm","15 cm","10 cm"],
+      optionsHindi: ["5 cm","12 cm","15 cm","10 cm"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212456/23_p2fe25.png"
+    },
+    {
+      id: 110,
+      question: "In the given figure, PQR is an equilateral triangle with sides 12cm. S and T are the midpoints of the sides PQ and PR respectively. What is the area (in sq.cm) of the shaded region?",
+      questionHindi: "दी गई आकृति में, PQR, 12cm भुजाओं वाला एक समबाहु त्रिभुज है। S और T क्रमशः भुजाओं PQ और PR के मध्यबिंदु हैं। छायांकित क्षेत्र का क्षेत्रफल (वर्ग सेमी में) क्या है?",
+      options: ["10√3","12√3","9√3","14√3"],
+      optionsHindi: ["10√3","12√3","9√3","14√3"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212455/24_nvnlxq.jpg"
+    },
+    {
+      id: 111,
+      question: "Triangle ABC is an isosceles right-angle triangle with ∠C = 90°. If D is any point on AB such that CD = 2√5 cm and BD = 6 cm. Find AD.",
+      questionHindi: "त्रिभुज ABC एक सम‌द्विबाहु समकोण त्रिभुज है जिसमें ∠C = 90°। यदि AB पर D कोई बिंदु इस प्रकार है कि CD = 2√5 cm और BD = 6 सेमी। AD का पता लगाएं।",
+      options: ["2cm","4cm","3(1/3) cm","CND"],
+      optionsHindi: ["2cm","4cm","3(1/3) cm","CND"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 112,
+      question: "In the given figure, triangle ABC is an isosceles triangle in which ∠DAC = 90°, AB = AC, BD = 5cm and CD = 12cm. Find AD.",
+      questionHindi: "दी गई आकृति में, त्रिभुज ABC एक सम‌द्विबाहु त्रिभुज है जिसमें ∠DAC = 90°, AB = AC, BD = 5 सेमी और CD = 12 सेमी है। AD का पता लगाएं।",
+      options: ["√67","√39","6.5","√52"],
+      optionsHindi: ["√67","√39","6.5","√52"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212457/27_wle1kr.png"
+    },
+    {
+      id: 113,
+      question: "D and E are two points on the sides AC and BC respectively of triangle ABC such that DE = 18 cm, CE = 5cm and ∠DEC = 90° .If tan ∠ABC = 3.6, find AC: CD.",
+      questionHindi: "त्रिभुज ABC की भुजाओं AC और BC पर क्रमशः D और E दो बिंदु इस प्रकार हैं कि DE = 18 सेमी, CE = 5 सेमी और ∠DEC = 90° है। यदि tan ∠ABC = 3.6, तो AC: CD ज्ञात कीजिए।",
+      options: ["BC:2CE","2CE:BC","2BC:CE","CE:2BC"],
+      optionsHindi: ["BC:2CE","2CE:BC","2BC:CE","CE:2BC"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 114,
+      question: "In an isosceles triangle ABC, AB = AC = 17.5, BC = 21 Infinite circles area were made inside this triangle as shown in figure. Find the sum of the perimeter of all the circles.",
+      questionHindi: "एक समद्विबाहु त्रिभुज ABC में, AB = AC = 17.5, BC = 21 है। इस त्रिभुज के अंदर अनंत वृत्तों का क्षेत्रफल बनाया गया था जैसा कि चित्र में दिखाया गया है। सभी वृत्तों के परिमापों का योग ज्ञात कीजिए।",
+      options: ["38.5","44","35","42"],
+      optionsHindi: ["38.5","44","35","42"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212458/29_v2lvqs.jpg"
+    },
+    {
+      id: 115,
+      question: "ABC is an isosceles triangle such that AB = AC and AD is the median to the base BC with angle ABC = 35° then angle BAD is:",
+      questionHindi: "ABC एक सम‌द्विबाहु त्रिभुज है जिसमें AB = AC और AD आधार BC की माध्यिका है जिसका कोण ABC = 35°, तो कोण BAD है:",
+      options: ["35°","55°","70°","110°"],
+      optionsHindi: ["35°","55°","70°","110°"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 116,
+      question: "ABC is a right-angle triangle in which angle ABC = 90°. Incircle of triangle ABC touches hypotenuse AC at point D. If AD = 5cm, DC = 7.5cm, find the area of triangle ABC.",
+      questionHindi: "ABC एक समकोण त्रिभुज है जिसमें कोण ABC = 90° है। त्रिभुज ABC का अन्तः वृत्त कर्ण AC को बिंदु D पर स्पर्श करता है। यदि AD = 5 सेमी, DC = 7.5 सेमी, त्रिभुज ABC का क्षेत्रफल ज्ञात कीजिए।",
+      options: ["25 sq.cm","42.5 sq.cm","37.5 sq.cm","40 sq.cm"],
+      optionsHindi: ["25 sq.cm","42.5 sq.cm","37.5 sq.cm","40 sq.cm"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212460/31_zs13do.png"
+    },
+    {
+      id: 117,
+      question: "If ABC is a right angle triangle, right angled at B, AC = 30cm. If M, N are points on AC such that AM = MN = NC, Find BM² + BN² ?",
+      questionHindi: "यदि ABC एक समकोण त्रिभुज है, जो B पर समकोण है, AC = 30cm है। यदि AC पर M, N ऐसे बिंदु हैं कि AM = MN = NC, BM² + BN² खोजें?",
+      options: ["400cm²","500cm²","250cm²","600cm²"],
+      optionsHindi: ["400cm²","500cm²","250cm²","600cm²"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 118,
+      question: "In ∆ABC, Angle C is 90°. M and N are mid points of sides AB and AC respectively. CM & BN intersect each other at D and angle BCD is 90°. If BC = 8 find the length of BN?",
+      questionHindi: "ABC में कोण C 90° है। M और N क्रमशः भुजा AB और AC के मध्य बिंदु हैं। CM और BN एक दूसरे को D पर काटते हैं और कोण BCD 90° है। यदि BC = 8 BN की लंबाई ज्ञात करें?",
+      options: ["6√3","6√6","4√6","8√3"],
+      optionsHindi: ["6√3","6√6","4√6","8√3"],
+      correctOption: 2,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 119,
+      question: "In a triangle ABC, vertices A, B and C are the feet of the perpendiculars from D, E and F respectively. If angle BED and angle BFE (in degrees) are 24 and 110 respectively, then what will be the measure (in degrees) of angle EBF?",
+      questionHindi: "एक ∆ABC में, शीर्ष A, B और C से क्रमश: D, E और F लंब के पाद है। यदि कोढ़ BED और कोढ़ BFE (अंश में) क्रमशः 24 और 110 हैं, तो कोढ़ EBF का माप (अंश में) कितना होगा?",
+      options: ["67","86","55","46"],
+      optionsHindi: ["67","86","55","46"],
+      correctOption: 3,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 120,
+      question: "If the inradius and circumradius of a right-angle triangle are 3cm and 10cm respectively, find the area of the triangle.",
+      questionHindi: "यदि एक समकोण त्रिभुज की अंतःत्रिज्या और परित्रिज्या क्रमशः 3 सेमी और 10 सेमी है, तो त्रिभुज का क्षेत्रफल ज्ञात कीजिए।",
+      options: ["69 sq.cm","56 sq.cm","65 sq.cm","75 sq.cm"],
+      optionsHindi: ["69 sq.cm","56 sq.cm","65 sq.cm","75 sq.cm"],
+      correctOption: 0,
+      explanation: "",
+      explanationHindi: ""
+    },
+    {
+      id: 121,
+      question: "If PQ = 3 cm and QR = 4 cm, find the length of ST.",
+      questionHindi: "यदि PQ = 3 सेमी और QR = 4 सेमी है, तो ST की लंबाई ज्ञात कीजिए।",
+      options: ["12/7","48/25","100/49","96/41"],
+      optionsHindi: ["12/7","48/25","100/49","96/41"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212460/33_vqsg9g.png"
+    },
+    {
+      id: 122,
+      question: "Find the radius of the semicircle. (angle B = 90°)",
+      questionHindi: "अर्धवृत्त की त्रिज्या ज्ञात कीजिए। (कोण B = 90°)",
+      options: ["6.25 cm","5.25 cm","6 cm","8.25 cm"],
+      optionsHindi: ["6.25 cm","5.25 cm","6 cm","8.25 cm"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212460/34_vb391d.jpg"
+    },
+    {
+      id: 123,
+      question: "Find the radius of the semicircle (angle B = 90°)",
+      questionHindi: "अर्धवृत्त की त्रिज्या ज्ञात कीजिए। (कोण B = 90°)",
+      options: ["12","60/7","10","7.5"],
+      optionsHindi: ["12","60/7","10","7.5"],
+      correctOption: 1,
+      explanation: "",
+      explanationHindi: "",
+      diagramUrl: "https://res.cloudinary.com/dvojmr2hj/image/upload/v1780212461/35_gx1zc5.jpg"
+    }
+  ]
+};
