@@ -24,6 +24,7 @@ import { useAuth } from './contexts/AuthContext.jsx';
 import { useData } from './contexts/DataContext.jsx';
 import Login from './components/Auth/Login.jsx';
 import AccessKeyPrompt from './components/Auth/AccessKeyPrompt.jsx';
+import { SkeletonPageLoader, SkeletonSheetGrid, SkeletonTable } from './components/SkeletonLoader.jsx';
 
 // Error Boundary Component for Production Safety
 class ErrorBoundary extends Component {
@@ -1874,12 +1875,7 @@ function App() {
   // Combined loading screen: wait for auth AND sheet data before showing home
   const showInitialLoader = authLoading || (user && !sheetsLoaded && availableSheets.length === 0 && appMode === 'home');
   if (showInitialLoader) {
-    return (
-      <div className="app-wrapper theme-tcs" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', gap: '16px' }}>
-        <div className="spinner" style={{ width: 40, height: 40 }}></div>
-        <p style={{ color: '#666', fontSize: '14px', fontWeight: 500 }}>Wait while your Super100 is loading...</p>
-      </div>
-    );
+    return <SkeletonPageLoader />;
   }
 
   // Show login screen if not authenticated
@@ -2352,10 +2348,7 @@ function App() {
           <div className="chapter-section-header">⚡ Practice Modules</div>
           
           {!sheetsLoaded ? (
-            <div className="loading-sheets-placeholder" style={{ textAlign: 'center', padding: '40px', opacity: 0.6 }}>
-              <div className="spinner" style={{ width: 32, height: 32, margin: '0 auto 12px' }}></div>
-              <p>Loading practice modules...</p>
-            </div>
+            <SkeletonSheetGrid count={8} />
           ) : (
           <div className="chapter-folders-grid">
             {Object.keys(groupedChapters).map((folderName) => {
@@ -3718,10 +3711,7 @@ function App() {
           </div>
 
           {loadingUsersData ? (
-            <div style={{ textAlign: 'center', padding: '80px 20px' }}>
-              <div className="spinner" style={{ margin: '0 auto 24px', width: '48px', height: '48px' }}></div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '16px' }}>Loading users data...</p>
-            </div>
+            <SkeletonTable rows={10} />
           ) : (
             <>
               {/* Enhanced Summary Cards */}

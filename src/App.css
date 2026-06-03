@@ -12,6 +12,20 @@
   to { transform: rotate(360deg); }
 }
 
+/* Skeleton Loader Animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-box {
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
 /* Pause Overlay Styles */
 .pause-overlay {
   position: fixed;

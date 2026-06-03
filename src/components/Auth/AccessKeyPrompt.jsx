@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AlertCircle, Lock, LogOut } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { SkeletonButton } from '../SkeletonLoader.jsx';
 
 const ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY;
 
@@ -85,7 +86,7 @@ export default function AccessKeyPrompt({ theme }) {
               opacity: loading ? 0.6 : 1, transition: 'all 0.2s ease', marginBottom: '12px'
             }}
           >
-            {loading ? 'Verifying...' : 'Verify Access Key'}
+            {loading ? <SkeletonButton height="20px" /> : 'Verify Access Key'}
           </button>
         </form>
 

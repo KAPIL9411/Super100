@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Mail, Lock, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { loginWithEmail, signUpWithEmail, loginWithGoogle, loginWithGoogleRedirect, getGoogleRedirectResult, resetPassword } from '../../firebase/auth';
+import { SkeletonButton, SkeletonBox } from '../SkeletonLoader.jsx';
 
 const inputStyle = (theme, error) => ({
   width: '100%',
@@ -163,7 +164,7 @@ export default function Login({ theme, onSuccess }) {
           )}
 
           <button type="submit" disabled={loading || !email || !password} style={{ ...btnStyle(theme, loading || !email || !password), marginBottom: '12px' }}>
-            {loading ? 'Please wait...' : (mode === 'login' ? 'Sign In' : 'Create Account')}
+            {loading ? <SkeletonButton height="20px" /> : (mode === 'login' ? 'Sign In' : 'Create Account')}
           </button>
         </form>
 
