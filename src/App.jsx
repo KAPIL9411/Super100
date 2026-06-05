@@ -98,8 +98,9 @@ class ErrorBoundary extends Component {
 function App() {
   const { user, userProfile, loading: authLoading, logout, updateProfile } = useAuth();
   const { 
-    examHistory, examAttempts, customSheets, mockPlans,
-    updateExamHistory, addExamAttempt, toggleBookmark, isBookmarked,
+    examAttempts, customSheets, mockPlans,
+    getSheetHistory, getOverallStats,
+    addExamAttempt, toggleBookmark, isBookmarked,
     addIssueReport, persistActiveTest, removeActiveTest,
     loadAllData, deleteAttempt, clearAllHistory,
     addMockPlan, removeMockPlan, updatePlanStatus
@@ -1459,38 +1460,8 @@ function App() {
         timeSpent: timeSpent
       };
 
-      // Save to Firestore via DataContext
+      // Save to Firestore via DataContext (SINGLE WRITE)
       addExamAttempt(attemptId, newAttempt);
-
-      updateExamHistory(activeSheetId, {
-        score: resultsData.score,
-        accuracy: resultsData.accuracy,
-        maxMarks: resultsData.maxMarks,
-        timestamp: new Date().toLocaleDateString(),
-        correctCount: resultsData.correctCount,
-        incorrectCount: resultsData.incorrectCount,
-        unattemptedCount: resultsData.unattemptedCount,
-        attemptedCount: resultsData.attemptedCount
-      });
-
-      // Save to localStorage as fallback
-      try {
-        const storedAttempts = JSON.parse(localStorage.getItem('super100_exam_attempts') || '[]');
-        storedAttempts.unshift(newAttempt);
-        localStorage.setItem('super100_exam_attempts', JSON.stringify(storedAttempts));
-        const storedHistory = JSON.parse(localStorage.getItem('super100_exam_history') || '{}');
-        storedHistory[activeSheetId] = {
-          score: resultsData.score,
-          accuracy: resultsData.accuracy,
-          maxMarks: resultsData.maxMarks,
-          timestamp: new Date().toLocaleDateString(),
-          correctCount: resultsData.correctCount,
-          incorrectCount: resultsData.incorrectCount,
-          unattemptedCount: resultsData.unattemptedCount,
-          attemptedCount: resultsData.attemptedCount
-        };
-        localStorage.setItem('super100_exam_history', JSON.stringify(storedHistory));
-      } catch (e) {}
 
       // Clear the active test
       localStorage.removeItem('super100_active_test');
@@ -1580,10 +1551,6 @@ function App() {
   const handleClearAllHistory = async () => {
     if (!window.confirm("🚨 Permanently delete ALL attempt history? This cannot be undone.")) return;
     await clearAllHistory();
-    try {
-      localStorage.removeItem('super100_exam_attempts');
-      localStorage.removeItem('super100_exam_history');
-    } catch (e) {}
     triggerToast("All attempt history cleared!", "success");
   };
 
@@ -1652,25 +1619,7 @@ function App() {
   };
 
   // ==========================================
-  // DASHBOARD HISTORY AGGREGATIONS
-  // ==========================================
-  const getOverallStats = () => {
-    const historyList = Object.values(examHistory);
-    if (historyList.length === 0) {
-      return { avgAccuracy: 0, bestScore: 0, completedTests: 0 };
-    }
-    
-    const totalAccuracy = historyList.reduce((acc, curr) => acc + curr.accuracy, 0);
-    const avgAccuracy = Math.round(totalAccuracy / historyList.length);
-    const bestScore = Math.max(...historyList.map(h => h.score));
-    
-    return {
-      avgAccuracy,
-      bestScore,
-      completedTests: historyList.length
-    };
-  };
-
+  // USE DERIVED STATS FROM CONTEXT
   const overallStats = getOverallStats();
 
   // ==========================================
@@ -2354,7 +2303,7 @@ function App() {
             {Object.keys(groupedChapters).map((folderName) => {
               const sheetsList = groupedChapters[folderName];
               const isExpanded = expandedFolders[folderName];
-              const attemptedCount = sheetsList.filter(s => examHistory[s.id]).length;
+              const attemptedCount = sheetsList.filter(s => getSheetHistory(s.id)).length;
               const isFullyCompleted = attemptedCount === sheetsList.length && sheetsList.length > 0;
               
               return (
@@ -2390,7 +2339,7 @@ function App() {
                   {isExpanded && (
                     <div className="folder-sheets-container">
                       {sheetsList.map((sheet) => {
-                        const previousAttempt = examHistory[sheet.id];
+                        const previousAttempt = getSheetHistory(sheet.id);
                         return (
                           <div key={sheet.id} className="topic-sheet-row">
                             

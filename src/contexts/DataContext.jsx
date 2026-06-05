@@ -1,8 +1,6 @@
 import { createContext, useContext, useState, useCallback, useRef, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import {
-  saveExamHistory,
-  getExamHistory,
   saveExamAttempt,
   getExamAttempts,
   syncBookmarks,
@@ -25,93 +23,69 @@ const DataContext = createContext(null);
 
 export function DataProvider({ children }) {
   const { user } = useAuth();
-  const [examHistory, setExamHistory] = useState({});
+  
+  // SINGLE SOURCE OF TRUTH: Only store attempts
   const [examAttempts, setExamAttempts] = useState([]);
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState([]);
   const [customSheets, setCustomSheets] = useState([]);
   const [mockPlans, setMockPlans] = useState([]);
   const [dataLoading, setDataLoading] = useState(false);
+  
   const syncTimer = useRef(null);
-  const historyTimer = useRef(null);
   const bookmarksRef = useRef(bookmarkedQuestions);
-  const dataLoadedRef = useRef(false); // Track if data was loaded
-  const lastSyncTime = useRef(0); // Track last sync time
   bookmarksRef.current = bookmarkedQuestions;
 
   useEffect(() => {
     return () => {
       if (syncTimer.current) clearTimeout(syncTimer.current);
-      if (historyTimer.current) clearTimeout(historyTimer.current);
     };
   }, []);
 
-  // AGGRESSIVE OPTIMIZATION: Load from localStorage first, then sync from Firestore only once per session
+  // EFFICIENT LOAD: Single read from Firestore
   const loadAllData = useCallback(async () => {
     if (!user) return;
     
-    // Prevent multiple loads in same session
-    if (dataLoadedRef.current) {
-      console.log('Data already loaded this session, skipping Firestore read');
-      return;
-    }
-    
+    console.log('Loading user data...');
     setDataLoading(true);
     
     try {
-      // STEP 1: Load from localStorage immediately (0 reads)
+      // Load from localStorage first (instant)
       const cachedData = {
-        history: JSON.parse(localStorage.getItem(`examHistory_${user.uid}`) || '{}'),
         attempts: JSON.parse(localStorage.getItem(`examAttempts_${user.uid}`) || '[]'),
         bookmarks: JSON.parse(localStorage.getItem(`bookmarks_${user.uid}`) || '[]'),
         custom: JSON.parse(localStorage.getItem(`customSheets_${user.uid}`) || '[]'),
         plans: JSON.parse(localStorage.getItem(`mockPlans_${user.uid}`) || '[]'),
       };
       
-      // Set cached data immediately
-      setExamHistory(cachedData.history);
+      // Set cached data immediately for instant UI
       setExamAttempts(cachedData.attempts);
       setBookmarkedQuestions(cachedData.bookmarks);
       setCustomSheets(cachedData.custom);
       setMockPlans(cachedData.plans);
       
-      // STEP 2: Sync from Firestore only if cache is old (>24 hours) or empty
-      const lastSync = parseInt(localStorage.getItem(`lastSync_${user.uid}`) || '0');
-      const now = Date.now();
-      const SYNC_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours
+      // Sync from Firestore in background (4 reads total)
+      const [attempts, bookmarks, custom, plans] = await Promise.all([
+        getExamAttempts(user.uid),
+        getBookmarks(user.uid),
+        getCustomSheets(user.uid),
+        getMockPlans(user.uid),
+      ]);
       
-      if (now - lastSync > SYNC_INTERVAL || cachedData.attempts.length === 0) {
-        console.log('Syncing from Firestore (cache expired or empty)...');
-        const [history, attempts, bookmarks, custom, plans] = await Promise.all([
-          getExamHistory(user.uid),
-          getExamAttempts(user.uid),
-          getBookmarks(user.uid),
-          getCustomSheets(user.uid),
-          getMockPlans(user.uid),
-        ]);
-        
-        // Update state
-        setExamHistory(history || {});
-        setExamAttempts(attempts || []);
-        setBookmarkedQuestions(bookmarks || []);
-        setCustomSheets(custom || []);
-        setMockPlans(plans || []);
-        
-        // Update localStorage cache
-        localStorage.setItem(`examHistory_${user.uid}`, JSON.stringify(history || {}));
-        localStorage.setItem(`examAttempts_${user.uid}`, JSON.stringify(attempts || []));
-        localStorage.setItem(`bookmarks_${user.uid}`, JSON.stringify(bookmarks || []));
-        localStorage.setItem(`customSheets_${user.uid}`, JSON.stringify(custom || []));
-        localStorage.setItem(`mockPlans_${user.uid}`, JSON.stringify(plans || []));
-        localStorage.setItem(`lastSync_${user.uid}`, now.toString());
-        
-        console.log('Firestore sync complete (5 reads)');
-      } else {
-        console.log('Using cached data (0 reads)');
-      }
+      // Update with fresh data
+      setExamAttempts(attempts || []);
+      setBookmarkedQuestions(bookmarks || []);
+      setCustomSheets(custom || []);
+      setMockPlans(plans || []);
       
-      dataLoadedRef.current = true;
+      // Update cache
+      localStorage.setItem(`examAttempts_${user.uid}`, JSON.stringify(attempts || []));
+      localStorage.setItem(`bookmarks_${user.uid}`, JSON.stringify(bookmarks || []));
+      localStorage.setItem(`customSheets_${user.uid}`, JSON.stringify(custom || []));
+      localStorage.setItem(`mockPlans_${user.uid}`, JSON.stringify(plans || []));
+      
+      console.log(`Data loaded: ${attempts?.length || 0} attempts`);
     } catch (e) {
-      console.error('DataContext load error:', e);
+      console.error('Data load error:', e);
     }
     setDataLoading(false);
   }, [user]);
@@ -124,35 +98,52 @@ export function DataProvider({ children }) {
     }
   }, []);
 
-  const updateExamHistory = useCallback((sheetId, data) => {
-    const updated = { ...examHistory, [sheetId]: { ...examHistory[sheetId], ...data } };
-    setExamHistory(updated);
+  // DERIVED DATA: Calculate stats from attempts (no storage needed)
+  const getSheetHistory = useCallback((sheetId) => {
+    const sheetAttempts = examAttempts.filter(a => a.sheetId === sheetId);
+    if (sheetAttempts.length === 0) return null;
     
-    // Update localStorage immediately (0 writes)
-    if (user) {
-      localStorage.setItem(`examHistory_${user.uid}`, JSON.stringify(updated));
+    // Return best attempt
+    return sheetAttempts.reduce((best, current) => 
+      (current.score > best.score) ? current : best
+    );
+  }, [examAttempts]);
+
+  const getOverallStats = useCallback(() => {
+    if (examAttempts.length === 0) {
+      return { avgAccuracy: 0, bestScore: 0, completedTests: 0, totalAttempts: 0 };
     }
     
-    // AGGRESSIVE: Disable Firestore writes for exam history (not critical data)
-    // Only localStorage is used - saves ~50 writes per exam
-    // Uncomment below if you need Firestore backup:
-    // if (historyTimer.current) clearTimeout(historyTimer.current);
-    // historyTimer.current = setTimeout(() => {
-    //   if (user) safeFirestore(() => saveExamHistory(user.uid, sheetId, data));
-    // }, 5000);
-  }, [user, examHistory]);
+    // Get unique sheets (count as completed tests)
+    const uniqueSheets = new Set(examAttempts.map(a => a.sheetId));
+    
+    // Calculate from all attempts
+    const totalAccuracy = examAttempts.reduce((sum, a) => sum + (a.accuracy || 0), 0);
+    const avgAccuracy = Math.round(totalAccuracy / examAttempts.length);
+    const bestScore = Math.max(...examAttempts.map(a => a.score || 0));
+    
+    return {
+      avgAccuracy,
+      bestScore,
+      completedTests: uniqueSheets.size,
+      totalAttempts: examAttempts.length
+    };
+  }, [examAttempts]);
 
+  // OPTIMISTIC UPDATE: Update UI immediately, sync in background
   const addExamAttempt = useCallback((attemptId, data) => {
     const newAttempt = { id: attemptId, ...data };
     const updated = [newAttempt, ...examAttempts];
+    
+    // Update state immediately (instant UI feedback)
     setExamAttempts(updated);
     
-    // Update localStorage immediately (0 writes)
+    // Update localStorage (instant persistence)
     if (user) {
       localStorage.setItem(`examAttempts_${user.uid}`, JSON.stringify(updated));
     }
     
-    // Write to Firestore (1 write)
+    // Sync to Firestore in background (1 write)
     if (user) safeFirestore(() => saveExamAttempt(user.uid, attemptId, data));
   }, [user, safeFirestore, examAttempts]);
 
@@ -165,12 +156,12 @@ export function DataProvider({ children }) {
     
     setBookmarkedQuestions(updated);
     
-    // Update localStorage immediately (0 writes)
+    // Update localStorage immediately
     if (user) {
       localStorage.setItem(`bookmarks_${user.uid}`, JSON.stringify(updated));
     }
     
-    // AGGRESSIVE: Debounce 5 seconds instead of 2
+    // Debounced Firestore sync (batch writes)
     if (syncTimer.current) clearTimeout(syncTimer.current);
     syncTimer.current = setTimeout(() => {
       if (user && updated) safeFirestore(() => syncBookmarks(user.uid, updated));
@@ -184,13 +175,10 @@ export function DataProvider({ children }) {
   const updateCustomSheets = useCallback((sheets) => {
     setCustomSheets(sheets);
     
-    // Update localStorage immediately (0 writes)
     if (user) {
       localStorage.setItem(`customSheets_${user.uid}`, JSON.stringify(sheets));
+      safeFirestore(() => saveCustomSheets(user.uid, sheets));
     }
-    
-    // Write to Firestore
-    if (user) safeFirestore(() => saveCustomSheets(user.uid, sheets));
   }, [user, safeFirestore]);
 
   const addIssueReport = useCallback((report) => {
@@ -217,26 +205,25 @@ export function DataProvider({ children }) {
 
   const deleteAttempt = useCallback(async (attemptId) => {
     if (!user) return;
-    await safeFirestore(() => deleteDocFromCollection(user.uid, 'examAttempts', attemptId));
+    
+    // Update UI immediately
     const updated = examAttempts.filter((a) => a.id !== attemptId);
     setExamAttempts(updated);
-    
-    // Update localStorage (0 reads)
     localStorage.setItem(`examAttempts_${user.uid}`, JSON.stringify(updated));
     
-    // OPTIMIZED: Don't reload all data, just update state (saves 5 reads)
+    // Delete from Firestore
+    await safeFirestore(() => deleteDocFromCollection(user.uid, 'examAttempts', attemptId));
   }, [user, safeFirestore, examAttempts]);
 
   const clearAllHistory = useCallback(async () => {
     if (!user) return;
-    await safeFirestore(() => deleteAllDocsInCollection(user.uid, 'examAttempts'));
-    await safeFirestore(() => deleteAllDocsInCollection(user.uid, 'examHistory'));
-    setExamAttempts([]);
-    setExamHistory({});
     
-    // Update localStorage (0 reads)
+    // Update UI immediately
+    setExamAttempts([]);
     localStorage.setItem(`examAttempts_${user.uid}`, JSON.stringify([]));
-    localStorage.setItem(`examHistory_${user.uid}`, JSON.stringify({}));
+    
+    // Clear Firestore
+    await safeFirestore(() => deleteAllDocsInCollection(user.uid, 'examAttempts'));
   }, [user, safeFirestore]);
 
   const addMockPlan = useCallback(async (plan) => {
@@ -246,10 +233,7 @@ export function DataProvider({ children }) {
       const newPlan = { ...plan, id: planId };
       const updated = [...mockPlans, newPlan];
       setMockPlans(updated);
-      
-      // Update localStorage immediately (0 writes)
       localStorage.setItem(`mockPlans_${user.uid}`, JSON.stringify(updated));
-      
       return planId;
     } catch (error) {
       console.error('Error adding mock plan:', error);
@@ -259,34 +243,30 @@ export function DataProvider({ children }) {
 
   const removeMockPlan = useCallback(async (planId) => {
     if (!user) return;
-    await safeFirestore(() => deleteMockPlan(user.uid, planId));
     const updated = mockPlans.filter((p) => p.id !== planId);
     setMockPlans(updated);
-    
-    // Update localStorage immediately (0 writes)
     localStorage.setItem(`mockPlans_${user.uid}`, JSON.stringify(updated));
+    await safeFirestore(() => deleteMockPlan(user.uid, planId));
   }, [user, safeFirestore, mockPlans]);
 
   const updatePlanStatus = useCallback(async (planId, status) => {
     if (!user) return;
-    await safeFirestore(() => updateMockPlanStatus(user.uid, planId, status));
     const updated = mockPlans.map((p) => p.id === planId ? { ...p, status } : p);
     setMockPlans(updated);
-    
-    // Update localStorage immediately (0 writes)
     localStorage.setItem(`mockPlans_${user.uid}`, JSON.stringify(updated));
+    await safeFirestore(() => updateMockPlanStatus(user.uid, planId, status));
   }, [user, safeFirestore, mockPlans]);
 
   return (
     <DataContext.Provider value={{
-      examHistory,
       examAttempts,
       bookmarkedQuestions,
       customSheets,
       mockPlans,
       dataLoading,
       loadAllData,
-      updateExamHistory,
+      getSheetHistory,
+      getOverallStats,
       addExamAttempt,
       toggleBookmark,
       isBookmarked,

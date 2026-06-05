@@ -33,8 +33,6 @@ function convertTimestamps(obj) {
 }
 
 const usersCol = (uid) => doc(db, 'users', uid);
-const examHistoryCol = (uid) => collection(db, 'users', uid, 'examHistory');
-const examHistoryDoc = (uid, sheetId) => doc(db, 'users', uid, 'examHistory', sheetId);
 const examAttemptsCol = (uid) => collection(db, 'users', uid, 'examAttempts');
 const examAttemptDoc = (uid, attemptId) => doc(db, 'users', uid, 'examAttempts', attemptId);
 const bookmarksCol = (uid) => collection(db, 'users', uid, 'bookmarkedQuestions');
@@ -61,22 +59,6 @@ export const updateUserProfile = async (uid, data) => {
 export const getUserProfile = async (uid) => {
   const snap = await getDoc(usersCol(uid));
   return snap.exists() ? convertTimestamps(snap.data()) : null;
-};
-
-export const saveExamHistory = async (uid, sheetId, data) => {
-  // OPTIMIZED: Use ISO string instead of serverTimestamp to save 1 write per call
-  await setDoc(examHistoryDoc(uid, sheetId), {
-    ...data,
-    updatedAt: new Date().toISOString(),
-  }, { merge: true });
-};
-
-export const getExamHistory = async (uid) => {
-  const q = query(examHistoryCol(uid));
-  const snap = await getDocs(q);
-  const result = {};
-  snap.forEach((d) => { result[d.id] = convertTimestamps(d.data()); });
-  return result;
 };
 
 export const saveExamAttempt = async (uid, attemptId, data) => {
@@ -236,28 +218,29 @@ export const getAllUserAttempts = async (uid) => {
 
 export const getUserStats = async (uid) => {
   try {
-    const [profile, attempts, history] = await Promise.all([
+    const [profile, attempts] = await Promise.all([
       getUserProfile(uid),
-      getAllUserAttempts(uid),
-      getExamHistory(uid)
+      getAllUserAttempts(uid)
     ]);
     
-    // Calculate average percentage score correctly
+    // Calculate stats from attempts only
     let averageScore = 0;
     if (attempts.length > 0) {
       const totalPercentage = attempts.reduce((sum, a) => {
-        // Calculate percentage: (score / maxMarks) * 100
         const percentage = a.maxMarks > 0 ? (a.score / a.maxMarks) * 100 : 0;
         return sum + percentage;
       }, 0);
       averageScore = (totalPercentage / attempts.length).toFixed(2);
     }
     
+    // Get unique sheets
+    const uniqueSheets = new Set(attempts.map(a => a.sheetId));
+    
     return {
       profile,
       attempts,
-      history,
       totalAttempts: attempts.length,
+      totalSheets: uniqueSheets.size,
       averageScore
     };
   } catch (error) {
